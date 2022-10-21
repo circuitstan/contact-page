@@ -1,5 +1,9 @@
 :root {
     --main-background-color: rgb(41, 41, 41);
+    --primary-text-color: rgb(224, 224, 224);
+    --primary-text-color-hover: rgb(215, 230, 255);
+    font-family: monospace;
+    font-size: 16px;
 }
 
 body {
@@ -11,8 +15,28 @@ body {
 }
 
 .info {
-    color: white;
+    color: var(--primary-text-color);
     display: flex;
     flex-direction: column;
-    
+}
+
+.info-content {
+    margin-left: 20px;
+}
+
+.email, .github {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: -16px;
+    gap: 10px;
+}
+
+a {
+    color: var(--primary-text-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--primary-text-color-hover);
 }

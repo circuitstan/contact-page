@@ -3,7 +3,7 @@
     --primary-text-color: rgb(224, 224, 224);
     --primary-text-color-hover: rgb(215, 230, 255);
     font-family: monospace;
-    font-size: 16px;
+    font-size: calc(16rem/16);
 }
 
 body {

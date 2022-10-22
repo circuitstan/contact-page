@@ -1,59 +1,35 @@
-console.log("hello circuitstan!")
+console.log("Hey there!")
 
-const container = document.getElementById('container')
-
-let infoObject = document.createElement('div')
-let objectOpen = document.createElement('p')
-let objectClose = document.createElement('p')
-let infoContent = document.createElement('div')
-let firstName = document.createElement('p')
-let lastName = document.createElement('p')
-let email = document.createElement('p')
-let emailLink = document.createElement('a')
-let emailDiv = document.createElement('div')
-let github = document.createElement('p')
-let githubLink = document.createElement('a')
-let githubDiv = document.createElement('div')
-
-infoObject.className = "info"
-infoContent.className = "info-content"
-emailDiv.className = "email"
-githubDiv.className = "github"
-
-
-function createInfo() {
-    objectOpen.textContent = "{"
-
-    firstName.textContent = "firstName: \"Stenver\""
-    lastName.textContent = "lastName: \"Suurkütt\""
-
-    email.textContent = "email: "
-    emailLink.href = "mailto:hello@stenver.dev"
-    let mailAadress = document.createTextNode("hello@stenver.dev")
-    emailLink.appendChild(mailAadress)
-
-    github.textContent = "gitHub: "
-    githubLink.href = "https://github.com/circuitstan"
-    let gitUser = document.createTextNode("circuitstan")
-    githubLink.appendChild(gitUser)
-
-    objectClose.textContent += "}"
+const contactInfo = {
+    firstName: "Stenver",
+    lastName: "Suurkütt",
+    email: "hello@stenver.dev",
+    github: ["circuitstan", "https://github.com/circuitstan"]
 }
 
-createInfo()
+let keys = Object.keys(contactInfo)
 
-infoContent.appendChild(firstName)
-infoContent.appendChild(lastName)
+function displayInfo() {
+    document.querySelector('.open').textContent = "{"
 
-emailDiv.appendChild(email)
-emailDiv.appendChild(emailLink)
-githubDiv.appendChild(github)
-githubDiv.appendChild(githubLink)
-infoContent.appendChild(emailDiv)
-infoContent.appendChild(githubDiv)
+    document.querySelector('.first-name').textContent = keys[0] + ": " + contactInfo.firstName
+    document.querySelector('.last-name').textContent = keys[1] + ": " + contactInfo.lastName
+    
+    let email = document.querySelector('.email')
+    email.textContent = keys[2] + ": "
+    let emailLink = document.createElement('a')
+    emailLink.href = "mailto:" + contactInfo.email
+    emailLink.textContent = contactInfo.email
+    email.appendChild(emailLink)
 
-infoObject.appendChild(objectOpen)
-infoObject.appendChild(infoContent)
-infoObject.appendChild(objectClose)
+    let github = document.querySelector('.github')
+    github.textContent = keys[3] + ": "
+    let githubLink = document.createElement('a')
+    githubLink.href = contactInfo.github[1]
+    githubLink.textContent = contactInfo.github[0]
+    github.appendChild(githubLink)
 
-container.appendChild(infoObject)
+    document.querySelector('.close').textContent = "}"
+}
+
+displayInfo()

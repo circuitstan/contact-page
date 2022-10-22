@@ -11,7 +11,7 @@ body {
     align-items: center;
     justify-content: center;
     display: flex;
-    margin-top: 100px;
+    margin-top: calc(150rem/16);
 }
 
 .info {
@@ -21,15 +21,8 @@ body {
 }
 
 .info-content {
+    margin: 16px 0;
     margin-left: 20px;
-}
-
-.email, .github {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: -16px;
-    gap: 10px;
 }
 
 a {

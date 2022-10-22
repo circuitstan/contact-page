@@ -2,6 +2,8 @@
     --main-background-color: rgb(41, 41, 41);
     --primary-text-color: rgb(224, 224, 224);
     --primary-text-color-hover: rgb(215, 230, 255);
+    --secondary-text-color: rgb(121, 184, 255);
+    --secondary-text-color-hover: rgb(147, 195, 251);
     font-family: monospace;
     font-size: calc(16rem/16);
 }
@@ -26,10 +28,10 @@ body {
 }
 
 a {
-    color: var(--primary-text-color);
+    color: var(--secondary-text-color);
     text-decoration: none;
 }
 
 a:hover {
-    color: var(--primary-text-color-hover);
+    color: var(--secondary-text-color-hover);
 }

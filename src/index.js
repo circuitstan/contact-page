@@ -4,8 +4,8 @@ const contactInfo = {
     firstName: "Stenver",
     lastName: "Suurkütt",
     email: "hello@stenver.dev",
-    linkedin: ["stenver-suurkütt", "https://www.linkedin.com/in/stenver-suurk%C3%BCtt/"],
-    github: ["circuitstan", "https://github.com/circuitstan"]
+    linkedIn: ["stenver-suurkütt", "https://www.linkedin.com/in/stenver-suurk%C3%BCtt/"],
+    gitHub: ["circuitstan", "https://github.com/circuitstan"]
 }
 
 let keys = Object.keys(contactInfo)
@@ -23,19 +23,19 @@ function displayInfo() {
     emailLink.textContent = contactInfo.email
     email.appendChild(emailLink)
 
-    let linkedin = document.querySelector('.linkedin')
-    linkedin.textContent = keys[3] + ": "
-    let linkedinLink = document.createElement('a')
-    linkedinLink.href = contactInfo.linkedin[1]
-    linkedinLink.textContent = contactInfo.linkedin[0]
-    linkedin.appendChild(linkedinLink)
+    let linkedIn = document.querySelector('.linkedin')
+    linkedIn.textContent = keys[3] + ": "
+    let linkedInLink = document.createElement('a')
+    linkedInLink.href = contactInfo.linkedIn[1]
+    linkedInLink.textContent = contactInfo.linkedIn[0]
+    linkedIn.appendChild(linkedInLink)
 
-    let github = document.querySelector('.github')
-    github.textContent = keys[4] + ": "
-    let githubLink = document.createElement('a')
-    githubLink.href = contactInfo.github[1]
-    githubLink.textContent = contactInfo.github[0]
-    github.appendChild(githubLink)
+    let gitHub = document.querySelector('.github')
+    gitHub.textContent = keys[4] + ": "
+    let gitHubLink = document.createElement('a')
+    gitHubLink.href = contactInfo.gitHub[1]
+    gitHubLink.textContent = contactInfo.gitHub[0]
+    gitHub.appendChild(gitHubLink)
 
     document.querySelector('.close').textContent = "}"
 }
